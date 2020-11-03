@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#141A31</color>
+    <color name="colorPrimaryDark">#080129</color>
+    <color name="colorAccent">#0097FB</color>
+    <color name="colorPrimaryLight">#1E2746</color>
+    <color name="colorTextPrimary">#CBD5ED</color>
+    <color name="colorTextSecondary">#4A5B82</color>
+    <color name="colorTextOther">#FAD303</color>
+    <color name="colorThemeExtra">#FF5252</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorGrey">#818181</color>
+    <color name="colorPrimaryWhite">#7AC4FF</color>
+    <color name="colorWhiteGrey">#E8E8E8</color>
+    <color name="colorlightWhite">#f5faff</color>
+    <color name="colorWhiteDark">#C3C3C3</color>
+    <color name="colorGreyDark">#535353</color>
+
+    <color name="colorSelectTransparency">#73BDBDBD</color>
+    <color name="colorSelectedTransparency">#851C91EE</color>
+
+    <color name="colorShapeOne">#DDFFF1</color>
+    <color name="colorShapeTwo">#B1FFEC</color>
+    <color name="colorShapeThree">#AFF7FF</color>
+
+    <color name="colorBannerLight">#3CFFDCCF</color>
+    <color name="colorBanner">#1AFFC0C0</color>
+    <color name="colorRed">#AE0000</color>
+    <color name="colorLightRed">#ED1717</color>
+
+    <!-- Social Media Colors -->
+    <color name="twitter_color">#1C9DEB</color>
+    <color name="twitter_color_trans">#1C9DEB</color>
+    <color name="youtube_color">#CD201F</color>
+    <color name="youtube_color_trans">#B5CD201F</color>
+</resources>

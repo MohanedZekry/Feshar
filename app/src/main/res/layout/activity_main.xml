@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isLoading"
+            type="Boolean" />
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:padding="@dimen/_8sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/tv_shows_most_popular"
+                android:maxLines="1"
+                android:textColor="@color/colorWhite"
+                android:includeFontPadding="false"
+                android:ellipsize="end"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/imageWatchList"
+                android:layout_width="@dimen/_24sdp"
+                android:contentDescription="@string/app_name"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_eye"
+                app:tint="@color/colorWhite"
+                android:layout_height="@dimen/_24sdp"/>
+
+
+            <ImageView
+                android:id="@+id/imageSearch"
+                android:layout_width="@dimen/_24sdp"
+                android:contentDescription="@string/app_name"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/colorWhite"
+                android:layout_height="@dimen/_24sdp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTvShows"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"/>
+
+        <ProgressBar
+            android:layout_width="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            android:layout_height="@dimen/_25sdp"
+            android:visibility="@{isLoading ? View.VISIBLE : View.GONE, default = gone}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
