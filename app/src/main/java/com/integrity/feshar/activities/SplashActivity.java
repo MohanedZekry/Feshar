@@ -1,14 +1,11 @@
-package com.integrity.feshar;
+package com.integrity.feshar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.WindowInsets;
-import android.view.WindowInsetsController;
-import android.view.WindowManager;
+
+import com.integrity.feshar.R;
 
 import java.util.concurrent.TimeUnit;
 
