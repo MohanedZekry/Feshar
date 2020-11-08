@@ -10,16 +10,16 @@ import com.integrity.feshar.response.TvShowResponse;
 
 public class MostPopularTvShowsViewModel extends ViewModel {
 
-    private MostPopularTvShowRepository mostPopularTvShowRepository;
+    private MostPopularTvShowRepository repository;
 
     public void init(Context context){
     }
 
     public MostPopularTvShowsViewModel() {
-        mostPopularTvShowRepository = MostPopularTvShowRepository.getInstance();
+        repository = MostPopularTvShowRepository.getInstance();
     }
     public LiveData<TvShowResponse> getMostPopularMovieTvShows(int page){
-        return mostPopularTvShowRepository.getMostPopularTvShows(page);
+        return repository.getMostPopularTvShows(page);
     }
 
 }

@@ -1,7 +1,7 @@
 package com.integrity.feshar.network;
 
+import com.integrity.feshar.response.TvShowDetailsResponse;
 import com.integrity.feshar.response.TvShowResponse;
-
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -30,6 +30,10 @@ public class ApiClient {
 
     public Call<TvShowResponse> getMostPopularTvShows(int page) {
         return apiService.getMostPopularTVShows(page);
+    }
+
+    public Call<TvShowDetailsResponse> getTvShowsDetails(String tvShowId){
+        return apiService.getTvShowsDetails(tvShowId);
     }
 
 }

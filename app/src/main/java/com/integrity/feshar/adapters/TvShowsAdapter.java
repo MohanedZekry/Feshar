@@ -2,6 +2,7 @@ package com.integrity.feshar.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -16,25 +17,30 @@ public class TvShowsAdapter extends RecyclerView.Adapter<TvShowsAdapter.TvShowVi
     private List<TvShow> list;
     private Context mContext;
     private LayoutInflater layoutInflater;
+    private OnTvShowClickListener onTvShowClickListener;
 
-    public TvShowsAdapter(Context mContext,List<TvShow> list) {
+    public TvShowsAdapter(Context mContext,List<TvShow> list, OnTvShowClickListener onTvShowClickListener) {
         this.list = list;
         this.mContext = mContext;
+        this.onTvShowClickListener = onTvShowClickListener;
     }
 
-    static class TvShowViewHolder extends RecyclerView.ViewHolder{
+    class TvShowViewHolder extends RecyclerView.ViewHolder{
+
         private ItemContainerBinding itemContainerBinding;
 
         public TvShowViewHolder(ItemContainerBinding itemContainerBinding) {
             super(itemContainerBinding.getRoot());
             this.itemContainerBinding = itemContainerBinding;
         }
+
         public void bindTvShow(TvShow tvShow){
             itemContainerBinding.setTvShow(tvShow);
             itemContainerBinding.executePendingBindings();
+            itemContainerBinding.getRoot().setOnClickListener(view -> { onTvShowClickListener.onTvShowClick(tvShow); });
         }
-    }
 
+    }
 
     @NonNull
     @Override
@@ -57,4 +63,9 @@ public class TvShowsAdapter extends RecyclerView.Adapter<TvShowsAdapter.TvShowVi
     public int getItemCount() {
         return list.size();
     }
+
+    public interface OnTvShowClickListener {
+        void onTvShowClick(TvShow tvShow);
+    }
+
 }

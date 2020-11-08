@@ -7,6 +7,11 @@
         <variable
             name="isLoading"
             type="Boolean" />
+
+        <variable
+            name="isLoadingMore"
+            type="Boolean" />
+
         <import type="android.view.View" />
 
     </data>
@@ -70,6 +75,10 @@
             android:id="@+id/recyclerViewTvShows"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_45sdp"
             android:clipToPadding="false"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -84,6 +93,17 @@
             app:layout_constraintTop_toBottomOf="@id/layoutHeader"
             android:layout_height="@dimen/_25sdp"
             android:visibility="@{isLoading ? View.VISIBLE : View.GONE, default = gone}" />
+
+        <ProgressBar
+            android:layout_height="@dimen/_25sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="@{isLoadingMore ? View.VISIBLE : View.GONE, default = gone}"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

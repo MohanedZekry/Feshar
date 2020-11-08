@@ -19,23 +19,13 @@ public class TvShowResponse {
         return page;
     }
 
-    public void setPage(int page) {
-        this.page = page;
-    }
-
     public int getTotalPages() {
         return totalPages;
     }
 
-    public void setTotalPages(int totalPages) {
-        this.totalPages = totalPages;
-    }
 
     public List<TvShow> getTvShows() {
         return tvShows;
     }
 
-    public void setTvShows(List<TvShow> tvShows) {
-        this.tvShows = tvShows;
-    }
 }
