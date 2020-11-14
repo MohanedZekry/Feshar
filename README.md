@@ -1,4 +1,4 @@
-<img src="img/feshar_logo.png" align="right" />
+<img src="img/feshar_logo.png" align="left" />
 
 [![Feshar](https://img.shields.io/badge/Feshar-TvShows-green)](https://github.com/MohanedZekry/Feshar)
 >
