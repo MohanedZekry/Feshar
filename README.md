@@ -10,13 +10,13 @@ All the data has been fetched from "episodate".
 
 # Libraries included
 <ul>
-	<li>MVVM</li>
- 	<li>RxJAVA</li>
+ 	<li>RxJava</li>
+	<li>Model-View-ViewModel</li>
+	<li>Retrofit</li>	
 	<li>Data Binding</li>
  	<li>Room Persistence</li>
 	<li>Support libraries</li>
 	<li>RecyclerView and CardViews</li>
-	<li>Retrofit</li>
 	<li>Design library</li>
 	<li>Palette</li>
 	<li>Picasso</li>
