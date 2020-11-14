@@ -1,6 +1,6 @@
 <img src="img/feshar_logo.png" align="right" />
 
-[![Feshar](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MohanedZekry/Feshar)
+[![Feshar](https://img.shields.io/badge/Feshar-TvShows-green)](https://github.com/MohanedZekry/Feshar)
 >
 
 # Feshar
