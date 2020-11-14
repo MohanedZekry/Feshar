@@ -1,3 +1,8 @@
+<img src="img/feshar_logo.png" align="right" />
+
+[![Feshar](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MohanedZekry/Feshar)
+>
+
 # Feshar
 An Android application which shows Popular, Now Playing, Top Rated and Upcoming TvShows and all the details Reviews, Trailer,
 Same goes with the TVShows showing Airing Today, OnAir, Popular, and Top Rated shows. Worked on making clean and beautifull UI and UX by using latest Google Material Designs.
