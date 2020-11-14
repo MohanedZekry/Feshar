@@ -372,5 +372,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:visibility="@{isLoading ? View.VISIBLE : View.GONE, default=gone}" />
 
+        <ImageView
+            android:id="@+id/ivAddToWatchList"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/ic_eye"
+            android:padding="@dimen/_6sdp"
+            android:contentDescription="@string/app_name"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/background_fab"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/colorWhite"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

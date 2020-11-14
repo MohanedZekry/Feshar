@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="IsLoading"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorPrimary"
+        tools:context=".activities.WatchListActivity">
+
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/colorWhite"
+                android:contentDescription="@string/app_name"/>
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/Watchlist"
+                android:fontFamily="@font/ubuntu_bold"/>
+        </LinearLayout>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewWatchList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:visibility="gone"
+            android:padding="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ProgressBar
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:visibility="@{IsLoading ? View.VISIBLE : View.GONE, default = gone}"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

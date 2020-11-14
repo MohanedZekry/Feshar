@@ -16,6 +16,8 @@ import com.integrity.feshar.viewmodels.MostPopularTvShowsViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.integrity.feshar.utilities.Constants.TV_SHOW_KEY;
+
 public class MainActivity extends AppCompatActivity implements TvShowsAdapter.OnTvShowClickListener {
 
     private MostPopularTvShowsViewModel viewModel;
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements TvShowsAdapter.On
                     }
                 }
             }
+        });
+        activityMainBinding.imageWatchList.setOnClickListener(view -> {
+            startActivity(new Intent(this, WatchListActivity.class));
         });
         getMostPopularTvShows();
     }
@@ -90,12 +95,7 @@ public class MainActivity extends AppCompatActivity implements TvShowsAdapter.On
     @Override
     public void onTvShowClick(TvShow tvShow) {
         Intent i = new Intent(getApplicationContext(), TvShowDetailsActivity.class);
-        i.putExtra("id", tvShow.getId());
-        i.putExtra("name", tvShow.getName());
-        i.putExtra("network", tvShow.getNetwork());
-        i.putExtra("status", tvShow.getStatus());
-        i.putExtra("startDate", tvShow.getStartDate());
-        i.putExtra("country", tvShow.getCountry());
+        i.putExtra(TV_SHOW_KEY, tvShow);
         startActivity(i);
     }
 }

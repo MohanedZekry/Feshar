@@ -1,9 +1,15 @@
 package com.integrity.feshar.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
-public class TvShow {
+@Entity(tableName = "tvShows")
+public class TvShow implements Serializable {
 
+    @PrimaryKey
     @SerializedName("id")
     private int id;
 
@@ -80,4 +86,5 @@ public class TvShow {
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
     }
+
 }
