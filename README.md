@@ -7,6 +7,7 @@ All the data has been fetched from "episodate".
 <ul>
 	<li>MVVM</li>
  	<li>RxJAVA</li>
+	<li>Data Binding</li>
  	<li>Room Persistence</li>
 	<li>Support libraries</li>
 	<li>RecyclerView and CardViews</li>
