@@ -101,5 +101,18 @@
             app:layout_constraintStart_toStartOf="@id/tvTvShowName"
             app:layout_constraintTop_toBottomOf="@id/tvStarted" />
 
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_delete"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:visibility="gone"
+            app:tint="@android:color/holo_red_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

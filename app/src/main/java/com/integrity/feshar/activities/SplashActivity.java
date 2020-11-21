@@ -1,14 +1,10 @@
 package com.integrity.feshar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.integrity.feshar.R;
-
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 

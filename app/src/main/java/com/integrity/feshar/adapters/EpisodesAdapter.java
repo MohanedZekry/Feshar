@@ -2,17 +2,13 @@ package com.integrity.feshar.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.integrity.feshar.R;
 import com.integrity.feshar.databinding.ItemContainerEpisodeBinding;
 import com.integrity.feshar.models.Episodes;
-
 import java.util.List;
 
 public class EpisodesAdapter extends RecyclerView.Adapter<EpisodesAdapter.EpisodeViewHolder> {

@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel;
 import com.integrity.feshar.database.TvShowDatabase;
 import com.integrity.feshar.models.TvShow;
 import java.util.List;
+
+import io.reactivex.Completable;
 import io.reactivex.Flowable;
 
 public class WatchListViewModel extends ViewModel {
@@ -21,4 +23,7 @@ public class WatchListViewModel extends ViewModel {
         return database.tvShowDao().getWatchList();
     }
 
+    public Completable removeFromWatchList(TvShow tvShow){
+        return database.tvShowDao().removeFromWatchList(tvShow);
+    }
 }

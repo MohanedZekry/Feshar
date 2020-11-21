@@ -8,6 +8,7 @@ import com.integrity.feshar.models.TvShow;
 import com.integrity.feshar.repositories.TvShowDetailsRepository;
 import com.integrity.feshar.response.TvShowDetailsResponse;
 import io.reactivex.Completable;
+import io.reactivex.Flowable;
 
 public class TvShowDetailsViewModel extends ViewModel {
 
@@ -32,4 +33,13 @@ public class TvShowDetailsViewModel extends ViewModel {
     public Completable addToWatchList(TvShow tvShow){
         return database.tvShowDao().addToWatchList(tvShow);
     }
+
+    public Flowable getTvShowFromWatchlist(String tvShowId){
+        return database.tvShowDao().getTvShowFromWatchlist(tvShowId);
+    }
+
+    public Completable removeFromWatchList(TvShow tvShow){
+        return database.tvShowDao().removeFromWatchList(tvShow);
+    }
+
 }

@@ -2,6 +2,7 @@ package com.integrity.feshar.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -9,26 +10,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.integrity.feshar.R;
 import com.integrity.feshar.databinding.ItemContainerBinding;
 import com.integrity.feshar.models.TvShow;
+
 import java.util.List;
 
-public class TvShowsAdapter extends RecyclerView.Adapter<TvShowsAdapter.TvShowViewHolder>{
+public class WatchListAdapter extends RecyclerView.Adapter<WatchListAdapter.WatchListViewHolder>{
 
     private List<TvShow> list;
     private Context mContext;
     private LayoutInflater layoutInflater;
-    private OnTvShowClickListener onTvShowClickListener;
+    private WatchListListener watchListListener;
 
-    public TvShowsAdapter(Context mContext,List<TvShow> list, OnTvShowClickListener onTvShowClickListener) {
+    public WatchListAdapter(Context mContext,List<TvShow> list, WatchListListener watchListListener) {
         this.list = list;
         this.mContext = mContext;
-        this.onTvShowClickListener = onTvShowClickListener;
+        this.watchListListener = watchListListener;
     }
 
-    class TvShowViewHolder extends RecyclerView.ViewHolder{
+    class WatchListViewHolder extends RecyclerView.ViewHolder{
 
         private ItemContainerBinding itemContainerBinding;
 
-        public TvShowViewHolder(ItemContainerBinding itemContainerBinding) {
+        public WatchListViewHolder(ItemContainerBinding itemContainerBinding) {
             super(itemContainerBinding.getRoot());
             this.itemContainerBinding = itemContainerBinding;
         }
@@ -36,25 +38,26 @@ public class TvShowsAdapter extends RecyclerView.Adapter<TvShowsAdapter.TvShowVi
         public void bindTvShow(TvShow tvShow){
             itemContainerBinding.setTvShow(tvShow);
             itemContainerBinding.executePendingBindings();
-            itemContainerBinding.getRoot().setOnClickListener(view -> { onTvShowClickListener.onTvShowClick(tvShow); });
+            itemContainerBinding.getRoot().setOnClickListener(view -> { watchListListener.onTvShowClick(tvShow); });
+            itemContainerBinding.ivDelete.setOnClickListener(view -> { watchListListener.removeTvShowFromWatchList(tvShow, getAdapterPosition());});
+            itemContainerBinding.ivDelete.setVisibility(View.VISIBLE);
         }
-
     }
 
     @NonNull
     @Override
-    public TvShowViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public WatchListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (layoutInflater == null){
             layoutInflater = LayoutInflater.from(parent.getContext());
         }
         ItemContainerBinding itemContainerBinding = DataBindingUtil.inflate(
                 layoutInflater , R.layout.item_container, parent , false
         );
-        return new TvShowViewHolder(itemContainerBinding);
+        return new WatchListViewHolder(itemContainerBinding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TvShowViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WatchListViewHolder holder, int position) {
         holder.bindTvShow(list.get(position));
     }
 
@@ -63,8 +66,9 @@ public class TvShowsAdapter extends RecyclerView.Adapter<TvShowsAdapter.TvShowVi
         return list.size();
     }
 
-    public interface OnTvShowClickListener {
+    public interface WatchListListener {
         void onTvShowClick(TvShow tvShow);
+        void removeTvShowFromWatchList(TvShow tvShow, int position);
     }
 
 }

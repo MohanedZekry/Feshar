@@ -12,7 +12,7 @@ public class ApiClient {
     private static ApiClient instance;
     private ApiService apiService;
 
-    public static ApiClient getInstance() {
+    public synchronized static ApiClient getInstance() {
         if (instance == null)
             instance = new ApiClient();
 

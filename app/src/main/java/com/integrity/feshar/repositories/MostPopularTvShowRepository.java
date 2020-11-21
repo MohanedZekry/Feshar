@@ -10,9 +10,9 @@ import retrofit2.Response;
 
 public class MostPopularTvShowRepository implements IMostPopularTvShowRepository {
 
-    private static MostPopularTvShowRepository instance;
+    private  static  MostPopularTvShowRepository instance;
 
-    public static MostPopularTvShowRepository getInstance() {
+    public synchronized static MostPopularTvShowRepository getInstance() {
         if (instance == null)
             instance = new MostPopularTvShowRepository();
 

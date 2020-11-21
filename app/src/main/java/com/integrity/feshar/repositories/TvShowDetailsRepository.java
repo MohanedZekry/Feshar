@@ -13,7 +13,7 @@ public class TvShowDetailsRepository implements ITvShowDetailsRepository{
 
     private static TvShowDetailsRepository instance;
 
-    public static TvShowDetailsRepository getInstance() {
+    public synchronized static TvShowDetailsRepository getInstance() {
         if (instance == null)
             instance = new TvShowDetailsRepository();
 
